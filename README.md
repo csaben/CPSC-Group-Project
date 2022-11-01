@@ -1,2 +1,2 @@
 # CPSC-Group-Project
-Brendan, Clark, Ted Project
+Brendan, Clark, Ted
