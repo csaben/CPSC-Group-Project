@@ -14,3 +14,5 @@ A list of features your program will contain. You should include brief descripti
 Your proposal should be around one page long, going into sufficient detail that I get a good sense of what your program will look like.
 
 I will give you feedback on your proposal. I will tell you if your proposal is too ambitious and give advice on scaling it back, or that your proposal is too simplistic and suggest ways of expanding it.
+
+https://docs.google.com/document/d/1Ev1woAjdD_FM5XJb_Xr1rPePblTgLODxS8Thlserplw/edit?usp=sharing
