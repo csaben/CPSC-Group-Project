@@ -1,0 +1,16 @@
+Task
+For this project, you and your teammates will decide what sort of project you wish to work on. There are some requirements your project must fulfill:
+
+The program must have a graphical user interface.
+It must read and write information from/to files.
+It must be reasonably complex. This is somewhat difficult to quantify, but the program should not be trivial in nature.
+ 
+Proposal (Due Novermber 10)
+You will write a proposal containing the following information:
+
+The name of the project.
+The goal of the project — what problem it aims to solve.
+A list of features your program will contain. You should include brief descriptions of roughly how each one will work.
+Your proposal should be around one page long, going into sufficient detail that I get a good sense of what your program will look like.
+
+I will give you feedback on your proposal. I will tell you if your proposal is too ambitious and give advice on scaling it back, or that your proposal is too simplistic and suggest ways of expanding it.
