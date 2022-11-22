@@ -10,12 +10,13 @@ public class gui {
         }
     }
 
-    public void addButton(String t, JFrame f){
-        JButton button = new JButton(text);
-        button.addActionListener(new ButtonListener(text));
-        f.getContentPane().add(button);
+    public void addButton(String t, JFrame f) {
+        if (continousScrolling == false) {
+            JButton button = new JButton(text);
+            button.addActionListener(new ButtonListener(text));
+            f.getContentPane().add(button);
+        }
     }
-
     public void closeWindow(){
 
     }
