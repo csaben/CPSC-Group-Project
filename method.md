@@ -1,3 +1,6 @@
+tragically, selenium is best documented with using an IDE like pycharm 
+from intellij idea so im going to switch over for that for the rest of production
+
 ---
 
 im going with number two;
