@@ -13,8 +13,12 @@ store urls in a temporary variable,
 begin a loop to scrape and collect an ArrayList<String> that includes all of the markdown 
 from within the <div class="chapter-inner chapter-content">,
 
-serve the ArrayList<String> object as a class of its own that handles batching of 
-chapters to gui (i.e. continouous, load 1, load 5, load 10, ...)
+make a folder with the name of the novel
+
+save each ele (chapter) in the arraylist to a file (.txt) within the novel folder
+
+serve the files within the folder as an ArrayList<String> object with a class of 
+its own that handles batching of chapters to gui (i.e. continouous, load 1, load 5, load 10, ...)
 
 ---
 
