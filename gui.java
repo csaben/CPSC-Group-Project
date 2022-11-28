@@ -108,6 +108,7 @@ class WindowHandler implements WindowListener {
     private JFrame frame;
 
     public WindowHandler(JFrame frame) {
+
         this.frame = frame;
     }
     @Override
@@ -115,11 +116,23 @@ class WindowHandler implements WindowListener {
         // Whatever method(s) set the completion status
         // Whatever method gives us the main menu
     }
-    public void windowOpened(WindowEvent e) {}
-    public void windowClosed(WindowEvent e) {}
-    public void windowIconified(WindowEvent e) {}
-    public void windowDeiconified(WindowEvent e) {}
-    public void windowActivated(WindowEvent e) {}
-    public void windowDeactivated(WindowEvent e) {}
+    public void windowOpened(WindowEvent e) {
+
+    }
+    public void windowClosed(WindowEvent e) {
+
+    }
+    public void windowIconified(WindowEvent e) {
+
+    }
+    public void windowDeiconified(WindowEvent e) {
+
+    }
+    public void windowActivated(WindowEvent e) {
+
+    }
+    public void windowDeactivated(WindowEvent e) {
+
+    }
 }
 

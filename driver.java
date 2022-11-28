@@ -1,4 +1,6 @@
 import org.openqa.selenium.WebDriver;
+
+import java.sql.Driver;
 //TODO: error persists; need to solve to use browser for scraping
 
 public class driver {
@@ -6,7 +8,7 @@ public class driver {
 //    private WebDriver Driver;
 
     public void setupDriver(){
-
+        this.Driver = Driver;
     }
 
     public void closeDriver(){
