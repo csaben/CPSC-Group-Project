@@ -62,6 +62,7 @@ public class GUI {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     //needs to open the next chapter using the displaywindow method
+                    f.dispatchEvent(new WindowEvent(f, WindowEvent.WINDOW_OPENED));
                     f.dispatchEvent(new WindowEvent(f, WindowEvent.WINDOW_CLOSING));
 
                 }
@@ -72,6 +73,7 @@ public class GUI {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     //needs to go to the prev. chapter using the displaywindow method
+                    f.dispatchEvent(new WindowEvent(f, WinowEvent.WINDOW_OPENED));
                     f.dispatchEvent(new WindowEvent(f, WindowEvent.WINDOW_CLOSING));
                 }
             });
@@ -115,24 +117,25 @@ class WindowHandler implements WindowListener {
     public void windowClosing(WindowEvent e) {
         // Whatever method(s) set the completion status
         // Whatever method gives us the main menu
+        displayMessage("WindowListener method called : windowClosing.");
     }
     public void windowOpened(WindowEvent e) {
-
+        displayMessage("WindowListener method called : windowOpened.");
     }
     public void windowClosed(WindowEvent e) {
-
+        displayMessage("WindowListener method called : windowClosed.");
     }
     public void windowIconified(WindowEvent e) {
-
+        displayMessage("WindowListener method called : windowIconified.");
     }
     public void windowDeiconified(WindowEvent e) {
-
+        displayMessage("WindowListener method called : windowDeiconified.");
     }
     public void windowActivated(WindowEvent e) {
-
+        displayMessage("WindowListener method called : windowActivated.");
     }
     public void windowDeactivated(WindowEvent e) {
-
+        displayMessage("WindowListener method called : windowDeactivated.");
     }
 }
 
