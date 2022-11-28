@@ -15,7 +15,7 @@ public class GuiTester {
                 "\n" +
                 "My fantasy ended when a man wearing a furrowed brow and a stubble beard entered the room. His face was red and he panted heavily \nlike he'd just been out for a morning jog.\n" +
                 "\n");
-        GUI g = new GUI(hash, "Test Novel", true);
+        gui g = new gui(hash, "Test Novel", true);
         g.read();
     }
 }

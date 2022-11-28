@@ -1,8 +1,10 @@
-public class NovelBuilder {
+import java.util.HashMap;
+
+public class novelBuilder {
 private String url;
 private HashMap<String, String> novels;
 
-public grabNovel(String url){
+public void grabNovel(String url){
 
 }
 

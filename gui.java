@@ -4,7 +4,7 @@ import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class GUI {
+public class gui {
     //creates the GUI, taking a hashmap of chapter names mapped to content
     //a boolean to tell you whether you're in continuous scrolling or not
     //and a String for the novel name
@@ -13,7 +13,7 @@ public class GUI {
 
     private String novelName;
 
-    public GUI(HashMap novel, String novelName, boolean continousScrolling) {
+    public gui(HashMap novel, String novelName, boolean continousScrolling) {
         this.novel=novel;
         this.continousScrolling=continousScrolling;
         this.novelName=novelName;

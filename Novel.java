@@ -7,11 +7,11 @@ public class Novel {
 
     }
 
-    public displayNovel(int selection){
+    public void displayNovel(int selection){
 
     }
 
-    public displayChapter(int selection){
+    public void displayChapter(int selection){
 
     }
 

@@ -1,4 +1,4 @@
-public class CLI {
+public class cli {
     public void mainMenu(){
 
     }

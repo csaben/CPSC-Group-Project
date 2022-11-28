@@ -5,7 +5,7 @@ import java.sql.Driver;
 
 public class driver {
     private String [] browserList;
-//    private WebDriver Driver;
+    private WebDriver Driver;
 
     public void setupDriver(){
         this.Driver = Driver;
