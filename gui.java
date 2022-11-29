@@ -73,7 +73,7 @@ public class gui {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     //needs to go to the prev. chapter using the displaywindow method
-                    f.dispatchEvent(new WindowEvent(f, WinowEvent.WINDOW_OPENED));
+                    f.dispatchEvent(new WindowEvent(f, WindowEvent.WINDOW_OPENED));
                     f.dispatchEvent(new WindowEvent(f, WindowEvent.WINDOW_CLOSING));
                 }
             });
