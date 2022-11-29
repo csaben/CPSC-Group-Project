@@ -8,19 +8,19 @@ public class gui {
     //creates the GUI, taking a hashmap of chapter names mapped to content
     //a boolean to tell you whether you're in continuous scrolling or not
     //and a String for the novel name
-    private boolean continousScrolling;
+    private boolean continuousScrolling;
     private HashMap novel;
 
     private String novelName;
 
-    public gui(HashMap novel, String novelName, boolean continousScrolling) {
+    public gui(HashMap novel, String novelName, boolean continuousScrolling) {
         this.novel=novel;
-        this.continousScrolling=continousScrolling;
+        this.continousScrolling=continuousScrolling;
         this.novelName=novelName;
     }
     public void read(){
         //Calls the appropriate method depending on whether or not we're in continuous scrolling mode
-        if(continousScrolling){
+        if(continuousScrolling){
             String entireNovel = "";
             for (Object s: novel.keySet()){
                 entireNovel= entireNovel+ "\n\n" + (String)s + "\n\n" + novel.get(s);
