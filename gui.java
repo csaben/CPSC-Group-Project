@@ -14,9 +14,9 @@ public class gui {
     private String novelName;
 
     public gui(HashMap novel, String novelName, boolean continuousScrolling) {
-        this.novel=novel;
-        this.continousScrolling=continuousScrolling;
-        this.novelName=novelName;
+        this.novel = novel;
+        this.continuousScrolling = continuousScrolling;
+        this.novelName = novelName;
     }
     public void read(){
         //Calls the appropriate method depending on whether or not we're in continuous scrolling mode
