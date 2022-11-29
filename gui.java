@@ -92,6 +92,49 @@ public class gui {
         p.setBackground(Color.gray);
         addButtons(p,f);
         JTextPane tp = new JTextPane();
+        public static String texttoHTML(String text){
+            StringBuilder builder = new StringBuilder();
+            boolean previousSpace = false;
+            for (char c : text.toCharArray()){
+                if (c == ' '){
+                    builder.append("&nbsp;");
+                    previousSpace = false;
+                    continue;
+                }
+                previousSpace = true;
+                else{
+                    previousSpace = false;
+                }
+                switch (c){
+                    case '<' :
+                        builder.append("&lt;");
+                        break;
+                    case '>' :
+                        builder.append("&gt;");
+                        break;
+                    case '&' :
+                        builder.append("&amp;");
+                        break;
+                    case '"' :
+                        builder.append("&quot;");
+                        break;
+                    case '\n' :
+                        builder.append("<br>");
+                        break;
+                    case '\t' :
+                        builder.append("&nbsp; &nbsp; &nbsp;");
+                        break;
+                    default :
+                        builder.append(c);
+                }
+            }
+            String converted = builder.toString();
+            String s = "(?i)\\b((?:https?://|www\\d{0,3}[.]|[a-z0-9.\\-]+[.][a-z]{2,4}/)(?:[^\\s()<>]+|\\(([^\\s()<>]+|(\\([^\\s()<>]+\\)))*\\))+(?:\\(([^\\s()<>]+|(\\([^\\s()<>]+\\)))*\\)|[^\\s`!()\\[\\]{};:\'\".,<>?«»“”‘’]))";
+            Pattern pattern = Pattern.compile(s);
+            Matcher match = pattern.match(converted);
+            converted = match.replaceAll("<a href=\"$1\">$1</a>");
+            return converted;
+        }
         tp.setText(text);
         tp.setEditable(false);
         JScrollPane sta = new JScrollPane(tp);
