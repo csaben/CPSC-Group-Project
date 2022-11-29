@@ -4,6 +4,8 @@ import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class gui {
     //creates the GUI, taking a hashmap of chapter names mapped to content
@@ -135,7 +137,51 @@ public class gui {
             return 2;
         }
     }
+    public static String texttoHTML(String text){
+        StringBuilder builder = new StringBuilder();
+        boolean previousSpace = false;
+        for (char c : text.toCharArray()){
+            if (c == ' '){
+                builder.append("&nbsp;");
+                previousSpace = false;
+                continue;
+            }
+            previousSpace = true;
+                else{
+                previousSpace = false;
+            }
+            switch (c){
+                case '<' :
+                    builder.append("&lt;");
+                    break;
+                case '>' :
+                    builder.append("&gt;");
+                    break;
+                case '&' :
+                    builder.append("&amp;");
+                    break;
+                case '"' :
+                    builder.append("&quot;");
+                    break;
+                case '\n' :
+                    builder.append("<br>");
+                    break;
+                case '\t' :
+                    builder.append("&nbsp; &nbsp; &nbsp;");
+                    break;
+                default :
+                    builder.append(c);
+            }
+        }
+        String converted = builder.toString();
+        String s = "(?i)\\b((?:https?://|www\\d{0,3}[.]|[a-z0-9.\\-]+[.][a-z]{2,4}/)(?:[^\\s()<>]+|\\(([^\\s()<>]+|(\\([^\\s()<>]+\\)))*\\))+(?:\\(([^\\s()<>]+|(\\([^\\s()<>]+\\)))*\\)|[^\\s`!()\\[\\]{};:\'\".,<>?«»“”‘’]))";
+        Pattern pattern = Pattern.compile(s);
+        Matcher match = pattern.match(converted);
+        converted = match.replaceAll("<a href=\"$1\">$1</a>");
+        return converted;
+    }
 }
+
 class WindowHandler implements WindowListener {
     //Returns to main menu and sets completion status
     private JFrame frame;
