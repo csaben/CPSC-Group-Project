@@ -95,7 +95,7 @@ public class gui {
 
     public void displayWindow(String title, String text) {
         //Creates the reader window with the selected novel/chapter and a scroll bar
-        JFrame f = new JFrame(texttoHTML(title));
+        JFrame f = new JFrame(title);
         JPanel p = new JPanel();
         p.setBounds(0, 500, 600, 100);
         p.setBackground(Color.gray);
