@@ -3,20 +3,23 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 public class gui {
     //creates the GUI, taking a hashmap of chapter names mapped to content
     //a boolean to tell you whether you're in continuous scrolling or not
     //and a String for the novel name
     private boolean continuousScrolling;
-    private HashMap novel;
+    private LinkedHashMap novel;
 
     private String novelName;
 
-    public gui(HashMap novel, String novelName, boolean continuousScrolling) {
-        this.novel = novel;
-        this.continuousScrolling = continuousScrolling;
-        this.novelName = novelName;
+    private String currentChapter;
+
+    public gui(LinkedHashMap novel, String novelName, boolean continuousScrolling) {
+        this.novel=novel;
+        this.continuousScrolling=continuousScrolling;
+        this.novelName=novelName;
     }
     public void read(){
         //Calls the appropriate method depending on whether or not we're in continuous scrolling mode
@@ -33,13 +36,14 @@ public class gui {
 
     public void chapterSelection(){
         //Creates a ComboBox and a button, when the button is pressed closes this frame and goes to the chapter indicated in the window
-        JFrame f = new JFrame("Select a chapter");
+        final JFrame f = new JFrame("Select a chapter");
         f.addWindowListener(new WindowHandler(f));
-        JComboBox cb = new JComboBox<>(novel.keySet().toArray());
+        final JComboBox cb = new JComboBox<>(novel.keySet().toArray());
         JButton b = new JButton(new AbstractAction("Read on!") {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String chosenKey = (String) cb.getSelectedItem();
+                currentChapter = chosenKey;
                 String title = novelName + ": " + (String) chosenKey;
                 displayWindow(title, (String) novel.get(chosenKey));
                 f.dispatchEvent(new WindowEvent(f, WindowEvent.WINDOW_CLOSING));
@@ -52,35 +56,38 @@ public class gui {
         f.setSize(600, 600);
         f.setVisible(true);
     }
-    public void addButtons(JPanel p, JFrame f) {
+    public void addButtons(JPanel p, final JFrame f) {
         //adds buttons to panel, only if not in continuous scrolling
 
-        if (continousScrolling == false) {
+        if (continuousScrolling == false) {
+            if(checkIncrement()!=1) {
+                JButton nButton = new JButton(new AbstractAction("Next") {
+                    //moves us to next chapter
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        String newChapter = incrementChapter(1);
+                        displayWindow(newChapter, (String) novel.get(newChapter));
+                        f.dispatchEvent(new WindowEvent(f, WindowEvent.WINDOW_CLOSING));
 
-            JButton nButton = new JButton(new AbstractAction("Next") {
-                //moves us to next chapter
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    //needs to open the next chapter using the displaywindow method
-                    f.dispatchEvent(new WindowEvent(f, WindowEvent.WINDOW_OPENED));
-                    f.dispatchEvent(new WindowEvent(f, WindowEvent.WINDOW_CLOSING));
+                    }
+                });
+                nButton.setBounds(0, 0, 95, 30);
+                p.add(nButton);
+            }
+            if(checkIncrement()!=0) {
+                JButton pButton = new JButton(new AbstractAction("Prev") {
+                    //moves us to previous chapter
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        String newChapter = incrementChapter(-1);
+                        displayWindow(newChapter, (String) novel.get(newChapter));
+                        f.dispatchEvent(new WindowEvent(f, WindowEvent.WINDOW_CLOSING));
+                    }
+                });
 
-                }
-            });
-
-            JButton pButton = new JButton(new AbstractAction("Prev") {
-                //moves us to previous chapter
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    //needs to go to the prev. chapter using the displaywindow method
-                    f.dispatchEvent(new WindowEvent(f, WindowEvent.WINDOW_OPENED));
-                    f.dispatchEvent(new WindowEvent(f, WindowEvent.WINDOW_CLOSING));
-                }
-            });
-            nButton.setBounds(0, 0, 95, 30);
-            pButton.setBounds(200, 200, 95, 30);
-            p.add(pButton);
-            p.add(nButton);
+                pButton.setBounds(200, 200, 95, 30);
+                p.add(pButton);
+            }
         }
     }
 
@@ -104,48 +111,29 @@ public class gui {
         f.setVisible(true);
 
     }
-    public static String texttoHTML(String text){
-        StringBuilder builder = new StringBuilder();
-        boolean previousSpace = false;
-        for (char c : text.toCharArray()){
-            if (c == ' '){
-                builder.append("&nbsp;");
-                previousSpace = false;
-                continue;
-            }
-            previousSpace = true;
-                else{
-                previousSpace = false;
-            }
-            switch (c){
-                case '<' :
-                    builder.append("&lt;");
-                    break;
-                case '>' :
-                    builder.append("&gt;");
-                    break;
-                case '&' :
-                    builder.append("&amp;");
-                    break;
-                case '"' :
-                    builder.append("&quot;");
-                    break;
-                case '\n' :
-                    builder.append("<br>");
-                    break;
-                case '\t' :
-                    builder.append("&nbsp; &nbsp; &nbsp;");
-                    break;
-                default :
-                    builder.append(c);
-            }
+    public String incrementChapter(int chapter){
+        ArrayList<String> chapterNames = new ArrayList<>();
+        for (Object s: novel.keySet()){
+            chapterNames.add((String)s);
         }
-        String converted = builder.toString();
-        String s = "(?i)\\b((?:https?://|www\\d{0,3}[.]|[a-z0-9.\\-]+[.][a-z]{2,4}/)(?:[^\\s()<>]+|\\(([^\\s()<>]+|(\\([^\\s()<>]+\\)))*\\))+(?:\\(([^\\s()<>]+|(\\([^\\s()<>]+\\)))*\\)|[^\\s`!()\\[\\]{};:\'\".,<>?«»“”‘’]))";
-        Pattern pattern = Pattern.compile(s);
-        Matcher match = pattern.match(converted);
-        converted = match.replaceAll("<a href=\"$1\">$1</a>");
-        return converted;
+        int chapterIndex = chapterNames.indexOf(currentChapter) + chapter;
+        String newChapter = chapterNames.get(chapterIndex);
+        currentChapter = newChapter;
+        return newChapter;
+    }
+    public int checkIncrement(){
+        ArrayList<String> chapterNames = new ArrayList<>();
+        for (Object s: novel.keySet()){
+            chapterNames.add((String)s);
+        }
+        int chapterIndex = chapterNames.indexOf(currentChapter);
+        if(chapterIndex==0){
+            return 0;
+        }if(chapterIndex == chapterNames.size()-1){
+            return 1;
+        }else{
+            return 2;
+        }
     }
 }
 class WindowHandler implements WindowListener {
@@ -153,32 +141,18 @@ class WindowHandler implements WindowListener {
     private JFrame frame;
 
     public WindowHandler(JFrame frame) {
-
         this.frame = frame;
     }
     @Override
     public void windowClosing(WindowEvent e) {
         // Whatever method(s) set the completion status
         // Whatever method gives us the main menu
-
     }
-    public void windowOpened(WindowEvent e) {
-
-    }
-    public void windowClosed(WindowEvent e) {
-
-    }
-    public void windowIconified(WindowEvent e) {
-
-    }
-    public void windowDeiconified(WindowEvent e) {
-
-    }
-    public void windowActivated(WindowEvent e) {
-
-    }
-    public void windowDeactivated(WindowEvent e) {
-
-    }
+    public void windowOpened(WindowEvent e) {}
+    public void windowClosed(WindowEvent e) {}
+    public void windowIconified(WindowEvent e) {}
+    public void windowDeiconified(WindowEvent e) {}
+    public void windowActivated(WindowEvent e) {}
+    public void windowDeactivated(WindowEvent e) {}
 }
 

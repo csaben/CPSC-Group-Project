@@ -1,9 +1,10 @@
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 public class GuiTester {
     //Tests the GUI with random stuff I pulled from RoyalRoad. Change the boolean in the constructor to test the chapter mode
     public static void main(String[] args) {
-        HashMap<String, String> hash = new HashMap<>();
+        LinkedHashMap<String, String> hash = new LinkedHashMap<>();
         hash.put("Chapter 1 Game Over You’re Dead","“Hello, this is Jeff Juggernaut with my beautiful co-host Ruby Apocalypse\n bringing you the World Championship \n finals of the card collecting game that has taken the gaming world by storm, Hero Seeker Online. Are you all ready for this--");
         hash.put("Chapter 2 Mother’s Milk", "I twitched a pudgy finger and the message vanished.\n" +
                 "\n" +
@@ -15,7 +16,8 @@ public class GuiTester {
                 "\n" +
                 "My fantasy ended when a man wearing a furrowed brow and a stubble beard entered the room. His face was red and he panted heavily \nlike he'd just been out for a morning jog.\n" +
                 "\n");
-        gui g = new gui(hash, "Test Novel", true);
+        hash.put("chapter 3", "something");
+        gui g = new gui(hash, "Test Novel", false);
         g.read();
     }
 }
