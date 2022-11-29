@@ -95,13 +95,13 @@ public class gui {
 
     public void displayWindow(String title, String text) {
         //Creates the reader window with the selected novel/chapter and a scroll bar
-        JFrame f = new JFrame(title);
+        JFrame f = new JFrame(texttoHTML(title));
         JPanel p = new JPanel();
         p.setBounds(0, 500, 600, 100);
         p.setBackground(Color.gray);
         addButtons(p,f);
         JTextPane tp = new JTextPane();
-        tp.setText(text);
+        tp.setText(texttoHTML(text));
         tp.setEditable(false);
         JScrollPane sta = new JScrollPane(tp);
         sta.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
