@@ -63,7 +63,7 @@ public class gui {
 
         if (continuousScrolling == false) {
             if(checkIncrement()!=1) {
-                JButton nButton = new JButton(new AbstractAction("Next") {
+                JButton nButton = new JButton(new AbstractAction() {
                     //moves us to next chapter
                     @Override
                     public void actionPerformed(ActionEvent e) {
@@ -78,7 +78,7 @@ public class gui {
                 p.add(nButton);
             }
             if(checkIncrement()!=0) {
-                JButton pButton = new JButton(new AbstractAction("Prev") {
+                JButton pButton = new JButton(new AbstractAction() {
                     //moves us to previous chapter
                     @Override
                     public void actionPerformed(ActionEvent e) {
