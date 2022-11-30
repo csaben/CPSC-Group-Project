@@ -167,9 +167,6 @@ public class gui {
                 case '"' :
                     builder.append("&quot;");
                     break;
-                case '\n' :
-                    builder.append("<br>");
-                    break;
                 case '\t' :
                     builder.append("&nbsp; &nbsp; &nbsp;");
                     break;
