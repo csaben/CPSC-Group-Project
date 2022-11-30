@@ -73,6 +73,7 @@ public class gui {
 
                     }
                 });
+                nButton.setIcon(new ImageIcon("Malzeno.jpg"));
                 nButton.setBounds(0, 0, 95, 30);
                 p.add(nButton);
             }
@@ -87,6 +88,7 @@ public class gui {
                     }
                 });
 
+                pButton.setIcon(new ImageIcon("Rathalos.jpg"));
                 pButton.setBounds(200, 200, 95, 30);
                 p.add(pButton);
             }
