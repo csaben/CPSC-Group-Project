@@ -141,12 +141,14 @@ public class gui {
         StringBuilder builder = new StringBuilder();
         boolean previousSpace = false;
         for (char c : text.toCharArray()){
-            if (c == ' '){
-                builder.append("&nbsp;");
-                previousSpace = false;
-                continue;
+            if (c == ' ') {
+                if (previousSpace) {
+                    builder.append("&nbsp;");
+                    previousSpace = false;
+                    continue;
+                }
+                previousSpace = true;
             }
-            previousSpace = true;
                 else{
                 previousSpace = false;
             }
@@ -176,8 +178,8 @@ public class gui {
         String converted = builder.toString();
         String s = "(?i)\\b((?:https?://|www\\d{0,3}[.]|[a-z0-9.\\-]+[.][a-z]{2,4}/)(?:[^\\s()<>]+|\\(([^\\s()<>]+|(\\([^\\s()<>]+\\)))*\\))+(?:\\(([^\\s()<>]+|(\\([^\\s()<>]+\\)))*\\)|[^\\s`!()\\[\\]{};:\'\".,<>?«»“”‘’]))";
         Pattern pattern = Pattern.compile(s);
-        Matcher match = pattern.match(converted);
-        converted = match.replaceAll("<a href=\"$1\">$1</a>");
+        Matcher matcher = pattern.matcher(converted);
+        converted = matcher.replaceAll("<a href=\"$1\">$1</a>");
         return converted;
     }
 }
