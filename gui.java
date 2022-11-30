@@ -105,6 +105,7 @@ public class gui {
         tp.setEditable(false);
         JScrollPane sta = new JScrollPane(tp);
         sta.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        sta.setPreferredSize(new Dimension(300, 300));
         p.add(sta);
         f.add(p);
         f.addWindowListener(new WindowHandler(f));
