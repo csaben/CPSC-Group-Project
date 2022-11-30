@@ -73,7 +73,7 @@ public class gui {
 
                     }
                 });
-                nButton.setIcon(new ImageIcon("Malzeno.jpg"));
+                nButton.setIcon(new ImageIcon("Right Arrow.jpg"));
                 nButton.setBounds(0, 0, 95, 30);
                 p.add(nButton);
             }
@@ -87,8 +87,7 @@ public class gui {
                         f.dispatchEvent(new WindowEvent(f, WindowEvent.WINDOW_CLOSING));
                     }
                 });
-
-                pButton.setIcon(new ImageIcon("Rathalos.jpg"));
+                pButton.setIcon(new ImageIcon("Left Arrow.jpg"));
                 pButton.setBounds(200, 200, 95, 30);
                 p.add(pButton);
             }
