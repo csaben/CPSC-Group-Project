@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b8a22891-9063-4084-812a-245063cf6f54" name="Changes" comment="Added a boolean input for the continuous scrolling mode" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2H0IKPXB4U8QAyCJgBeqfqg0dXO" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="GuiTester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GuiTester" />
+      <module name="CPSC-Group-Project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.GuiTester" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b8a22891-9063-4084-812a-245063cf6f54" name="Changes" comment="" />
+      <created>1667415509456</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1667415509456</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Updated AUTHORS.txt">
+      <created>1667415578047</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1667415578047</updated>
+    </task>
+    <task id="LOCAL-00002" summary="created .gitignore">
+      <created>1667482756764</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1667482756764</updated>
+    </task>
+    <task id="LOCAL-00003" summary="basic outline of gui">
+      <created>1669577149858</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669577149858</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Mostly finished GUI. Takes a hashmap of chapter names mapped to chapter text, a boolean to tell you whether you're in continuous scrolling or not and a String for the novel name. Still needs to know what methods get called when the gui is closed, needs work on the next/previous buttons in chapter selection, and style work">
+      <created>1669590349488</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669590349488</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added test module for GUI">
+      <created>1669590499981</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1669590499981</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Updated Gui to take LinkedHashMap, created functionality for next/prev buttons, removed next/previous buttons when there aren't chapters to go to">
+      <created>1669742300191</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1669742300194</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Re-added text to HTML method">
+      <created>1669755030598</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1669755030598</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Re-added text to HTML method">
+      <created>1669755353923</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1669755353923</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Applied text to html method to line 104">
+      <created>1669755487758</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1669755487758</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Created methods to pull text from file into GUI">
+      <created>1669862826375</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1669862826375</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Created methods to pull text from file into GUI">
+      <created>1669911018981</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1669911018981</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Updated AUTHORS.txt" />
+    <MESSAGE value="created .gitignore" />
+    <MESSAGE value="basic outline of gui" />
+    <MESSAGE value="Mostly finished GUI. Takes a hashmap of chapter names mapped to chapter text, a boolean to tell you whether you're in continuous scrolling or not and a String for the novel name. Still needs to know what methods get called when the gui is closed, needs work on the next/previous buttons in chapter selection, and style work" />
+    <MESSAGE value="Added test module for GUI" />
+    <MESSAGE value="Updated Gui to take LinkedHashMap, created functionality for next/prev buttons, removed next/previous buttons when there aren't chapters to go to" />
+    <MESSAGE value="Re-added text to HTML method" />
+    <MESSAGE value="Applied text to html method to line 104" />
+    <MESSAGE value="Created methods to pull text from file into GUI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created methods to pull text from file into GUI" />
+  </component>
+</project>
