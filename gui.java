@@ -196,7 +196,7 @@ public class gui {
         int selection = s.nextInt()-1;
         File selectedFile = novelNames[selection];
         LinkedHashMap novel=readFiles(selectedFile);
-        gui g = new gui(novel, noHyphen(selectedFile.getName()), true);
+        gui g = new gui(novel, noHyphen(selectedFile.getName()), false);
         g.read();
     }
 
