@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8a22891-9063-4084-812a-245063cf6f54" name="Changes" comment="Created methods to pull text from file into GUI">
-      <change beforePath="$PROJECT_DIR$/gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/gui.java" afterDir="false" />
+    <list default="true" id="b8a22891-9063-4084-812a-245063cf6f54" name="Changes" comment="Added a boolean input for the continuous scrolling mode">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +139,21 @@
       <option name="project" value="LOCAL" />
       <updated>1669862826375</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Created methods to pull text from file into GUI">
+      <created>1669911018981</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1669911018981</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Added a boolean input for the continuous scrolling mode">
+      <created>1669911178305</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1669911178305</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -163,6 +177,7 @@
     <MESSAGE value="Re-added text to HTML method" />
     <MESSAGE value="Applied text to html method to line 104" />
     <MESSAGE value="Created methods to pull text from file into GUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created methods to pull text from file into GUI" />
+    <MESSAGE value="Added a boolean input for the continuous scrolling mode" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a boolean input for the continuous scrolling mode" />
   </component>
 </project>
