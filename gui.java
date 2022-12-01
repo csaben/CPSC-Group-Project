@@ -119,6 +119,7 @@ public class gui {
 
     }
     public String incrementChapter(int chapter){
+        //Retrieves the name of the next or previous chapter
         ArrayList<String> chapterNames = new ArrayList<>();
         for (Object s: novel.keySet()){
             chapterNames.add((String)s);
@@ -129,6 +130,7 @@ public class gui {
         return newChapter;
     }
     public int checkIncrement(){
+        //Checks whether the current chapter is the first or last chapter
         ArrayList<String> chapterNames = new ArrayList<>();
         for (Object s: novel.keySet()){
             chapterNames.add((String)s);
@@ -185,6 +187,7 @@ public class gui {
         return converted;
     }
     public static void getNovel() throws FileNotFoundException {
+        //Pulls the novel from the files and passes it into the gui
         System.out.println("Please select a novel");
         File[] novelNames = getGetNovelNames();
         int i = 0;
@@ -194,9 +197,14 @@ public class gui {
         }
         Scanner s = new Scanner(System.in);
         int selection = s.nextInt()-1;
+        System.out.println("Continuous Scrolling?(Y/N)");
+        boolean continuousScrolling = false;
+        if(s.nextLine().equals("Y")){
+            continuousScrolling=true;
+        }
         File selectedFile = novelNames[selection];
         LinkedHashMap novel=readFiles(selectedFile);
-        gui g = new gui(novel, noHyphen(selectedFile.getName()), true);
+        gui g = new gui(novel, noHyphen(selectedFile.getName()), continuousScrolling);
         g.read();
     }
 
@@ -206,6 +214,7 @@ public class gui {
         LinkedHashMap novel = new LinkedHashMap<>();
         File[] chapters = file.listFiles();
         Arrays.sort(chapters);
+
         for (File f: chapters) {
             Scanner scanner = null;
             try {
