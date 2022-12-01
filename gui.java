@@ -119,6 +119,7 @@ public class gui {
 
     }
     public String incrementChapter(int chapter){
+        // increments the chapter
         ArrayList<String> chapterNames = new ArrayList<>();
         for (Object s: novel.keySet()){
             chapterNames.add((String)s);
@@ -129,6 +130,7 @@ public class gui {
         return newChapter;
     }
     public int checkIncrement(){
+        // checks if the chapter can be incremented or decremented
         ArrayList<String> chapterNames = new ArrayList<>();
         for (Object s: novel.keySet()){
             chapterNames.add((String)s);
@@ -143,6 +145,7 @@ public class gui {
         }
     }
     public static String texttoHTML(String text){
+        // turns the text into HTML
         StringBuilder builder = new StringBuilder();
         boolean previousSpace = false;
         for (char c : text.toCharArray()){
@@ -220,7 +223,7 @@ public class gui {
         System.out.println(novel.keySet());
         return novel;
     }
-    public static File[] getGetNovelNames() throws FileNotFoundException {
+    public static File[] getGetNovelNamesNovelNames() throws FileNotFoundException {
 
         File novelsFile = new File("novels");
         File filesList[] = novelsFile.listFiles();
