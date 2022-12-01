@@ -1,8 +1,8 @@
 # CPSC-Group-Project (240)
-Authors: Brendan, Clark, Ted
+<i>Authors</i>: Brendan, Clark, Ted
 
 
-# Royal Road Reader
+## Royal Road Reader
 
 1) git clone
 2) set ide to use the module selenium-server-YEAR.jar
