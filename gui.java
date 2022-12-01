@@ -1,9 +1,13 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Arrays;
 import java.util.LinkedHashMap;
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -110,7 +114,6 @@ public class gui {
         p.add(sta);
         f.add(p);
         f.addWindowListener(new WindowHandler(f));
-
         f.setSize(600, 600);
         f.setVisible(true);
 
@@ -151,7 +154,7 @@ public class gui {
                 }
                 previousSpace = true;
             }
-                else{
+            else{
                 previousSpace = false;
             }
             switch (c){
@@ -181,6 +184,54 @@ public class gui {
         converted = matcher.replaceAll("<a href=\"$1\">$1</a>");
         return converted;
     }
+    public static void getNovel() throws FileNotFoundException {
+        System.out.println("Please select a novel");
+        File[] novelNames = getGetNovelNames();
+        int i = 0;
+        for (File n : novelNames) {
+            i++;
+            System.out.println(i + ". " + noHyphen(n.getName()));
+        }
+        Scanner s = new Scanner(System.in);
+        int selection = s.nextInt()-1;
+        File selectedFile = novelNames[selection];
+        LinkedHashMap novel=readFiles(selectedFile);
+        gui g = new gui(novel, noHyphen(selectedFile.getName()), true);
+        g.read();
+    }
+
+
+
+    public static LinkedHashMap readFiles(File file){
+        LinkedHashMap novel = new LinkedHashMap<>();
+        File[] chapters = file.listFiles();
+        Arrays.sort(chapters);
+        for (File f: chapters) {
+            Scanner scanner = null;
+            try {
+                scanner = new Scanner(f, StandardCharsets.UTF_8.name());
+            } catch (FileNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+            String content = scanner.useDelimiter("\\A").next();
+            scanner.close();
+            novel.put(noHyphen(f.getName()), content);
+        }
+        System.out.println(novel.keySet());
+        return novel;
+    }
+    public static File[] getGetNovelNames() throws FileNotFoundException {
+
+        File novelsFile = new File("novels");
+        File filesList[] = novelsFile.listFiles();
+
+        return filesList;
+    }
+    public static String noHyphen(String str) {
+        str= str.replaceAll("-", " ");
+        str = str.replaceAll(".txt", "");
+        return str;
+    }
 }
 
 class WindowHandler implements WindowListener {
@@ -192,8 +243,7 @@ class WindowHandler implements WindowListener {
     }
     @Override
     public void windowClosing(WindowEvent e) {
-        // Whatever method(s) set the completion status
-        // Whatever method gives us the main menu
+
     }
     public void windowOpened(WindowEvent e) {}
     public void windowClosed(WindowEvent e) {}
