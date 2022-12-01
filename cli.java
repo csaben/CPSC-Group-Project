@@ -1,3 +1,4 @@
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class cli {
@@ -18,6 +19,11 @@ public class cli {
                 if (choice == 1) {
                     //request more gui related info before opening gui
                     //TED METHOD CALLED HERE; ASK FOR USER TO PICK A NOVEL; OPEN PICKED NOVEL IN GUI INSTANCE
+                    try {
+                        gui.getNovel();
+                    } catch (FileNotFoundException e) {
+                        throw new RuntimeException(e);
+                    }
                     bool = false;
                 } else if (choice == 2) {
                     //ask for novel url to be added (politely)
